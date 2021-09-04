@@ -59,7 +59,7 @@ spec:
       - name: source
         path: /src
         git:
-          repo: https://github.com/vfarcic/argo-workflows-demo.git
+          repo: https://github.com/novoselskiy/argo-workflows-demo.git
           revision: HEAD
     container:
       image: alpine

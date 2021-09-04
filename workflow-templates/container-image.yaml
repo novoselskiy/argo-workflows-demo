@@ -11,11 +11,15 @@ spec:
       - name: container_image
       - name: container_tag
     container:
-      image: gcr.io/kaniko-project/executor:debug
+      #image: vnovoselskiy/kaniko-executor:latest
+      image: vnovoselskiy/kaniko-executor:debug
+      #args: ["--context=git://github.com/novoselskiy/wp-image","--force",
+      #       "--use-new-run",
+      #       "--destination=vnovoselskiy/wordpress:latest"]
       args:
       - --context={{inputs.parameters.app_repo}}
+      - --force
       - --destination={{inputs.parameters.container_image}}:{{inputs.parameters.container_tag}}
       volumeMounts:
         - name: kaniko-secret
           mountPath: /kaniko/.docker/
-  
